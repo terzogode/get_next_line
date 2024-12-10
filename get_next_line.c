@@ -6,14 +6,14 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:12:45 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/09 16:26:19 by mbrighi          ###   ########.fr       */
+/*   Updated: 2024/12/10 18:26:59 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 
-static char *ft_trasla(char *line, char *buf)
+char *ft_trasla(char *line, char *buf)
 {
 	char	temp;
 
@@ -36,8 +36,8 @@ static char	*ft_recalloc(char *buf, int fd)
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read < 0)
 		{
-			free(line);
-			return (0);
+			buf[0] = '\0';
+			return (free(line), NULL);
 		}
 		if (bytes_read == 0)
 			return (*line);

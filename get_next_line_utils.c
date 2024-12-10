@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:12:40 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/09 16:59:43 by mbrighi          ###   ########.fr       */
+/*   Updated: 2024/12/10 19:21:27 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strjoingnl(char *s1, char *s2)
 		is1++;
 	}
 	free (s1);
-	while (s2[is2] && s2[is2] != '\n')
+	while (s2[is2])
 	{
 		l[is1 + is2] = s2[is2];
 		is2++;
@@ -100,7 +100,7 @@ char	*ft_strdup(const char *s)
 	if (!k)
 		return (NULL);
 	h = 0;
-	while (s[h] != '\0' && s[h - 1] != '\n')
+	while (s[h] != '\0' && (h == 0 || s[h - 1] != '\n'))
 	{
 		k[h] = s[h];
 		h++;
