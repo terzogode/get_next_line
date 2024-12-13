@@ -13,14 +13,27 @@
 #include "get_next_line.h"
 
 
-char *ft_trasla(char *line, char *buf)
+char    *ft_trasla(char *line, char *buf)
 {
-	char	temp;
+    char    *temp;
+    char    *newline_pos;
+    size_t  remaining_len;
 
-	temp = *ft_substr(buf, 0, (size_t) ft_strchr(buf, '\n'));
-	line = ft_strjoingnl(line, &temp);
-	return (*line);
+    newline_pos = ft_strchr(buf, '\n');
+    if (newline_pos != NULL)
+    {
+        temp = ft_substr(buf, 0, (newline_pos - buf + 1));  // **Modificato da (newline_pos - buf + 2)**
+        line = ft_strjoingnl(line, temp);
+        free(temp);
+
+        // Calcola la lunghezza del contenuto rimanente dopo '\n'
+        remaining_len = ft_strlen(newline_pos + 1);
+        // Sposta il contenuto rimanente di buf all'inizio
+        ft_memmove(buf, newline_pos + 1, remaining_len + 1); // **+1 per includere il terminatore nullo**
+    }
+    return (line);
 }
+
 
 static char	*ft_recalloc(char *buf, int fd)
 {
