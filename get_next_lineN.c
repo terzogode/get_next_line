@@ -116,7 +116,15 @@ int	main(int argc, char **argv)
     if (argc != 2)
     {
 		write(1, "\n", 1);
+	    return (1);
 	}
+	    
+    if (fd < 0)
+    {
+        perror("Error opening file");
+        return (1);  // **Aggiunto return (1);**
+    }
+
 	else
     {
         char *line = get_next_line(fd);
@@ -132,4 +140,7 @@ int	main(int argc, char **argv)
     close(fd);    
     return (0);
 }
+
+
+
 
