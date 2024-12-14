@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:12:40 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/10 19:21:27 by mbrighi          ###   ########.fr       */
+/*   Updated: 2024/12/14 16:46:36 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char	*ft_strjoingnl(char *s1, char *s2)
 	l[is1 + is2] = '\0';
 	return ((char *)l);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned char	*daje;
@@ -63,7 +64,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (start + len >= ft_strlen(s))
 		len = ft_strlen(s) - start;
-	daje = malloc(sizeof(char)* len + 1);
+	daje = malloc(sizeof(char) * len + 1);
 	if (!daje)
 		return (NULL);
 	while (is[start] != '\0' && len > l)
@@ -75,6 +76,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	daje[l] = '\0';
 	return ((char *)daje);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	f;
@@ -90,6 +92,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[f]);
 	return (NULL);
 }
+
 char	*ft_strdup(const char *s)
 {
 	char	*k;
