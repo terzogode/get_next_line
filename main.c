@@ -9,3 +9,4 @@ int main(void){
 	read(fd, buffer, 4);
 	close(fd);
 }
+cc *.c -DBUFFER_SIZE=5 -g && yolo ./a.out prova
