@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:12:45 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/14 19:11:15 by mbrighi          ###   ########.fr       */
+/*   Updated: 2024/12/16 12:21:18 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,8 @@ char	*get_next_line(int fd)
 	}
 	return (ft_recalloc(buf, line, fd));
 }
-
-/* int	main(int argc, char **argv)
+/* 
+int	main(int argc, char **argv)
 {
     int		fd;
 
@@ -127,18 +127,18 @@ char	*get_next_line(int fd)
     return (0);
 } */
 
-// int	main()
-// {
-//     int		fd;
+/* int	main()
+{
+    int		fd;
 
-//     fd = 0;
-// 	char *line = get_next_line(fd);
-// 	while (line)
-// 	{
-// 		printf("[%s]", line);
-// 		free(line);
-// 		line = get_next_line(fd);
-// 	}
-//     close(fd);    
-//     return (0);
-// }
+    fd = 0;
+	char *line = get_next_line(fd);
+	while (line)
+	{
+		printf("[%s]", line);
+		free(line);
+		line = get_next_line(fd);
+	}
+    close(fd);    
+    return (0);
+} */
